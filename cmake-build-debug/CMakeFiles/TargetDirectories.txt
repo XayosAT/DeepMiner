@@ -1,0 +1,3 @@
+C:/Users/Christoph/CLionProjects/DeepMiner/cmake-build-debug/CMakeFiles/DeepMiner.dir
+C:/Users/Christoph/CLionProjects/DeepMiner/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Christoph/CLionProjects/DeepMiner/cmake-build-debug/CMakeFiles/rebuild_cache.dir

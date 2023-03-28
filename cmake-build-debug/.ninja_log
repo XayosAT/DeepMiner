@@ -1,0 +1,9 @@
+# ninja log v5
+2	575	7016883384388687	CMakeFiles/DeepMiner.dir/Bot.cpp.obj	582812f4886d647c
+12	2263	7016902438142528	CMakeFiles/DeepMiner.dir/main.cpp.obj	8d50d2c89d0292a
+32	622	7016883384418659	CMakeFiles/DeepMiner.dir/CoolBot.cpp.obj	18553c00ecd09050
+60	625	7016883384528578	CMakeFiles/DeepMiner.dir/CringeBot.cpp.obj	222120ff664c9c3f
+119	628	7016883384538565	CMakeFiles/DeepMiner.dir/SwagBot.cpp.obj	f87ea29841cb4a15
+2385	2959	7016902701658383	DeepMiner.exe	60abdd13b7a5525e
+14	2383	7016902696117213	CMakeFiles/DeepMiner.dir/MiningSite.cpp.obj	8010a989447b034d
+56	2259	7016902438112624	CMakeFiles/DeepMiner.dir/Game.cpp.obj	add951b2bc76da66

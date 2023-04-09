@@ -6,6 +6,8 @@
 #define DEEPMINER_MININGSITE_H
 #include <vector>
 #include <iostream>
+#include <algorithm>
+#include <random>
 using namespace std;
 
 class MiningSite {
@@ -13,12 +15,19 @@ class MiningSite {
 public:
     MiningSite();
     ~MiningSite();
-    void mine(int x, int y, int z);
     vector<vector<vector<int>>> getGrid();
     void printGrid();
+    vector<int> getPillar(int x, int y);
+    void printPillar(int x, int y);
+    vector<vector<int>> getLayer(int z);
+    void printLayer(int z);
+    void sortZAxis(int x, int y, int order);
+    int getVal(int x, int y, int z);
+    void setVal(int x, int y, int z, int val);
 
 private:
-    vector<vector<vector<int>>> grid = vector<vector<vector<int>>>(5, vector<vector<int>>(5, vector<int>(10)));
+    vector<vector<vector<int>>> *grid;
+
 };
 
 

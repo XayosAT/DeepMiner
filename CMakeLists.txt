@@ -16,4 +16,4 @@ add_executable(DeepMiner
         MiningSite.cpp
         MiningSite.h
         SwagBot.cpp
-        SwagBot.h Game.h Game.cpp position.h)
+        SwagBot.h Game.h Game.cpp position.h Player.h Player.cpp AI.h AI.cpp)

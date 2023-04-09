@@ -4,10 +4,8 @@
 
 #ifndef DEEPMINER_GAME_H
 #define DEEPMINER_GAME_H
-#include "Bot.h"
-#include "MiningSite.h"
-#include <vector>
-#include <iostream>
+#include "Player.h"
+#include "AI.h"
 using namespace std;
 
 
@@ -17,8 +15,11 @@ class Game {
 public:
     Game();
     ~Game();
+    void start();
 private:
-    MiningSite miningSite;
+    MiningSite *site;
+    vector<Player*> *players;
+    void initPlayer(int index);
 
 
 };

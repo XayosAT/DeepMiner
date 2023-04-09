@@ -4,10 +4,14 @@
 
 #ifndef DEEPMINER_SWAGBOT_H
 #define DEEPMINER_SWAGBOT_H
+#include "Bot.h"
 
+class SwagBot : public Bot{
 
-class SwagBot {
-
+public:
+    void mine(MiningSite *site) override;
+private:
+    string name = "SwagBot";
 };
 
 

@@ -4,10 +4,14 @@
 
 #ifndef DEEPMINER_CRINGEBOT_H
 #define DEEPMINER_CRINGEBOT_H
+#include "Bot.h"
 
+class CringeBot : public Bot {
 
-class CringeBot {
-
+public:
+    void mine(MiningSite *site) override;
+private:
+    string name = "CringeBot";
 };
 
 

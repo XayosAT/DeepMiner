@@ -7,7 +7,6 @@
 void CoolBot::mine(MiningSite *site) {
 
     site->sortZAxis(pos.x, pos.y, 0);
-    score += site->getVal(9, pos.x, pos.y);
-    site->setVal(9, pos.x, pos.y, 0);
+    score += site->getVal(pos.x, pos.y);
 
 }

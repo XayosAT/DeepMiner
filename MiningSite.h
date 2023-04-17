@@ -23,8 +23,9 @@ public:
     void printLayer(int z);
     void sortZAxis(int x, int y, int order);
     int getVal(int x, int y, int z);
+    int getVal(int x, int y);
     void setVal(int x, int y, int z, int val);
-
+    int getPillarSize(int x, int y);
 private:
     vector<vector<vector<int>>> *grid;
 

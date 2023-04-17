@@ -6,11 +6,11 @@
 
 MiningSite::MiningSite() {
 
-    grid = new vector<vector<vector<int>>>(10, vector<vector<int>>(5, vector<int>(5)));
+    grid = new vector<vector<vector<int>>>(5, vector<vector<int>>(5, vector<int>(10)));
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
-            for (int k = 0; k < 5; k++) {
+            for (int k = 0; k < 10; k++) {
                 grid->at(i).at(j).at(k) = rand() % 9 + 1;
             }
         }
@@ -23,21 +23,22 @@ MiningSite::MiningSite() {
 
 void MiningSite::printGrid() {
 
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 5; j++) {
-            for (int k = 0; k < 5; k++) {
+    for (int i = 0; i < grid->size(); i++) {
+        for (int j = 0; j < grid->at(i).size(); j++) {
+            for (int k = 0; k < grid->at(i).at(j).size(); k++) {
                 cout << grid->at(i).at(j).at(k) << " ";
             }
             cout << endl;
         }
-        cout <<  endl;
+        cout << endl;
     }
+}
 //    cout << "pillar at 0, 0: " << endl;
 //    printPillar(0, 0);
 //    sortZAxis(0, 0, 2);
 //    cout << "pillar at 0, 0 after sorting: " << endl;
 //    printPillar(0, 0);
-}
+
 
 void MiningSite::sortZAxis(int x, int y, int order) {
 
@@ -57,19 +58,14 @@ void MiningSite::sortZAxis(int x, int y, int order) {
             break;
     }
 
-    for (int i = 0; i < 10; i++){
-        grid->at(i).at(x).at(y) = pillar.at(i);
+    for (int i = 0; i < pillar.size() ; i++){
+        grid->at(x).at(y).at(i) = pillar.at(i);
     }
 
 }
 
 vector<int> MiningSite::getPillar(int x, int y) {
-    vector<int> pillar;
-    pillar.reserve(10);
-    for (int i = 0; i < 10; ++i) {
-        pillar.push_back(grid->at(i).at(x).at(y));
-    }
-    return pillar;
+    return grid->at(x).at(y);
 }
 
 void MiningSite::printPillar(int x, int y) {
@@ -81,11 +77,27 @@ void MiningSite::printPillar(int x, int y) {
 }
 
 int MiningSite::getVal(int x, int y, int z) {
-    return grid->at(z).at(x).at(y);
+    int val = grid->at(x).at(y).at(z);
+    grid->at(x).at(y).erase(grid->at(x).at(y).begin() + z);
+    return val;
+}
+
+int MiningSite::getVal(int x, int y) {
+    if (grid->at(x).at(y).size() > 0) {
+        int val = grid->at(x).at(y).back();
+        grid->at(x).at(y).pop_back();
+        return val;
+    } else {
+        return 0;
+    }
 }
 
 void MiningSite::setVal(int x, int y, int z, int val) {
-    grid->at(z).at(x).at(y) = val;
+    grid->at(x).at(y).at(z) = val;
+}
+
+int MiningSite::getPillarSize(int x, int y) {
+    return grid->at(x).at(y).size();
 }
 
 

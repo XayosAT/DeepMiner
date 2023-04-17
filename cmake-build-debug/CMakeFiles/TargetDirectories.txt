@@ -1,3 +1,3 @@
-E:/Documents/FH/Cpp Files/DeepMiner/cmake-build-debug/CMakeFiles/DeepMiner.dir
-E:/Documents/FH/Cpp Files/DeepMiner/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Documents/FH/Cpp Files/DeepMiner/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Christoph/CLionProjects/DeepMiner/cmake-build-debug/CMakeFiles/DeepMiner.dir
+C:/Users/Christoph/CLionProjects/DeepMiner/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Christoph/CLionProjects/DeepMiner/cmake-build-debug/CMakeFiles/rebuild_cache.dir

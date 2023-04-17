@@ -39,7 +39,7 @@ void Game::initPlayer(int index) {
         cin >> input;
     }
     if (input == 'y') {
-        players->push_back(new Player(::atoi(&type), name));
+        players->push_back(new Player(2, name));
     } else {
         players->push_back(new AI(::atoi(&type), name));
     }

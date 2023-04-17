@@ -6,11 +6,12 @@
 
 void CringeBot::mine(MiningSite *site) {
 
-    int r = rand() % 10;
-    if (r < 2){
-        for (int i = 9; i >= 0; i --){
-            score += site->getVal(i, pos.x, pos.y);
-            site->setVal(i, pos.x, pos.y, 0);
+
+    int pSize = site->getPillarSize(pos.x, pos.y);
+    for (int i = 0; i < pSize; i++){
+        int r = rand() % 10;
+        if (r < 5){
+            score += site->getVal(pos.x, pos.y);
         }
     }
 

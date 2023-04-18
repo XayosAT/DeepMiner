@@ -17,15 +17,15 @@ public:
     ~MiningSite();
     vector<vector<vector<int>>> getGrid();
     void printGrid();
-    vector<int> getPillar(int x, int y);
     void printPillar(int x, int y);
-    vector<vector<int>> getLayer(int z);
-    void printLayer(int z);
     void sortZAxis(int x, int y, int order);
     int getVal(int x, int y, int z);
     int getVal(int x, int y);
     void setVal(int x, int y, int z, int val);
     int getPillarSize(int x, int y);
+    void printGameView(int x, int y);
+    bool isEmpty();
+    void randomizePillars();
 private:
     vector<vector<vector<int>>> *grid;
 

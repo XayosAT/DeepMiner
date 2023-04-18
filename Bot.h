@@ -19,15 +19,16 @@ public:
     int getScore() const;
     Position getPosition();
     string getName();
+    virtual void mine(MiningSite *site) = 0;
+    void move(char direction);
 
 protected:
     Position pos = {0,0};
     int score = 0;
-    string name;
+    string name = "Bot";
 
-    void move();
-    virtual void mine(MiningSite *site) = 0;
-    bool validMove(char direction) const;
+
+
 };
 
 

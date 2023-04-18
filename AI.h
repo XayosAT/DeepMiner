@@ -11,6 +11,7 @@ class AI : public Player{
 public:
     AI(int bot, string name);
     ~AI();
+    void move() override;
 };
 
 

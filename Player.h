@@ -16,10 +16,12 @@ public:
     Player(int bot, string name);
     ~Player();
     string getName();
+    virtual void move();
 
 protected:
     Bot *bot;
     string name;
+    bool validMove(char direction) const;
 };
 
 

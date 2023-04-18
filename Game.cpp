@@ -6,19 +6,47 @@
 
 Game::Game() {
     site = new MiningSite();
-    site->printGrid();
-
 }
 
 void Game::start() {
+    cout << "print game view" << endl;
+    site->printGameView(0, 0);
 
     initPlayer(0);
     initPlayer(1);
-    for (int i = 0; i < players->size(); i++) {
-        Player *tmp = players->at(i);
-        cout << "Player "<< i << " :" << tmp->getName() << " chose bot " << tmp->getBot()->getName() << endl;
+
+    int *count0;
+    int *count1;
+    while (!site->isEmpty()){
+        resolveRound(count0, count1);
+    }
+
+}
+
+void Game::resolveRound(int *count0, int *count1) {
+
+
+    resolveTurn(0);
+    if(players[0]->getBot()->getScore() > (50*(*count0))){
+        count0++;
+        site->randomizePillars();
+    }
+
+    resolveTurn(1);
+    if(players[1]->getBot()->getScore() > (50*(*count1))){
+        count1++;
+        site->randomizePillars();
     }
 }
+
+void Game::resolveTurn(int index) {
+    site->printGameView(players[index]->getBot()->getPosition().x, players[index]->getBot()->getPosition().y);
+    players[index]->move();
+    players[index]->getBot()->mine(site);
+
+}
+
+
 
 void Game::initPlayer(int index) {
     cout << "Player " << index << " please enter your name: ";
@@ -39,9 +67,9 @@ void Game::initPlayer(int index) {
         cin >> input;
     }
     if (input == 'y') {
-        players->push_back(new Player(2, name));
+        players[index] = (new Player(::atoi(&type), name));
     } else {
-        players->push_back(new AI(::atoi(&type), name));
+        players[index] = (new AI(::atoi(&type), name));
     }
 
 
@@ -49,5 +77,6 @@ void Game::initPlayer(int index) {
 
 Game::~Game() {
     delete site;
-    delete[] players;
+    delete players[0];
+    delete players[1];
 }

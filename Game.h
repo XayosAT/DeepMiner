@@ -18,8 +18,10 @@ public:
     void start();
 private:
     MiningSite *site;
-    vector<Player*> *players;
+    Player *players[2];
     void initPlayer(int index);
+    void resolveRound(int *count0, int *count1);
+    void resolveTurn(int index);
 
 
 };
